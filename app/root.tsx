@@ -1,7 +1,4 @@
-import { rootAuthLoader } from "@clerk/remix/ssr.server";
-
-export const loader: LoaderFunction = (args) => rootAuthLoader(args);
-import type { MetaFunction } from "@remix-run/cloudflare";
+import type { MetaFunction, LoaderFunction } from "@remix-run/cloudflare";
 import {
   Links,
   LiveReload,
@@ -10,6 +7,10 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+
+import { rootAuthLoader } from "@clerk/remix/ssr.server";
+
+export const loader: LoaderFunction = (args) => rootAuthLoader(args);
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
